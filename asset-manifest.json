@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/malih-app-page/static/css/main.0a6f9241.css",
+    "main.js": "/malih-app-page/static/js/main.d5b71814.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/malih-app-page/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/HeroBanner.png": "/malih-app-page/static/media/HeroBanner.f6058d792915051f35cd.png",
+    "static/media/ValidateContactsImage.png": "/malih-app-page/static/media/ValidateContactsImage.8383d49e0e349011635e.png",
+    "static/media/EmailGuesserImage.png": "/malih-app-page/static/media/EmailGuesserImage.c2751abebe45aab7c79d.png",
+    "static/media/ExtractContactsImage.png": "/malih-app-page/static/media/ExtractContactsImage.e8d6b322d1d35607a323.png",
+    "static/media/CsvConverterImage.png": "/malih-app-page/static/media/CsvConverterImage.6ba0de635071fc6d8414.png",
+    "static/media/HeroBannerBackground.png": "/malih-app-page/static/media/HeroBannerBackground.cca97638d9303c92329e.png",
+    "index.html": "/malih-app-page/index.html",
+    "main.0a6f9241.css.map": "/malih-app-page/static/css/main.0a6f9241.css.map",
+    "main.d5b71814.js.map": "/malih-app-page/static/js/main.d5b71814.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/malih-app-page/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a6f9241.css",
+    "static/js/main.d5b71814.js"
+  ]
+}
