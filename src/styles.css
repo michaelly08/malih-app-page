@@ -1,0 +1,1383 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: rgb(8, 8, 8);
+    --form-color: rgb(65, 65, 65);
+    --button-color: linear-gradient(90deg, rgb(187, 255, 0) 0%, rgb(42, 231, 0) 35%, rgb(0, 255, 200) 100%);
+    --button-hover: linear-gradient(90deg, rgb(0, 255, 200) 0%, rgb(187, 255, 0) 35%, rgb(42, 231, 0) 100%);
+    --gray-color: rgb(82, 82, 82);
+    --dark-gray-color: rgb(41, 41, 41);
+    --navbar-height: 50px;
+    --background-gradient: linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 60, 1) 70%, rgb(25, 149, 0) 100%);
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    /* background-color: var(--background-color); */
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+body {
+    
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-margin-top: 60px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* .emailguesser-list::-webkit-scrollbar {
+    display: none;
+} */
+
+
+.container-margin {
+    padding-top: 80px;
+    background-color: var(--background-color);
+    min-height: 100vh;
+}
+
+.gradient-text {
+    background: var(--button-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/*      EMAIL GUESSER       *//*      EMAIL GUESSER       *//*      EMAIL GUESSER       */
+
+.emailguesser-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    
+}
+
+.emailguesser-title-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    /* margin-top: 40px; */
+}
+
+
+.emailguesser-title {
+    font-size: 45px;
+    background: var(--button-color);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.emailguesser-subtitle {
+    color: white;
+}
+
+
+.emailguesser-wrapper {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    /* padding: 20px 0; */
+}
+
+.emailguesser-box {
+    display: flex;
+    /* background-color: var(--form-color); */
+    max-width: 480px;
+    width: 100%;
+    color: white;
+    flex-direction: column;
+    padding: 10px;
+    /* box-shadow: 0 2px 5px 0px rgb(94, 94, 94); */
+    min-width: 280px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form input, select, .emailguesser-noemails, textarea, .jobroles-container, .note-validation{
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 40px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    background-color: var(--dark-gray-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+.company-urls-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-validation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 5px;
+    height: auto;
+    background-color: orange;
+}
+
+/* .company-urls-import {
+    padding: 0px 5px;
+    background: var(--button-color);
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+.inputfile {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+}
+
+.import-button {
+    padding: 0px 5px;
+    background: var(--button-color);
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.import-button:hover {
+    background: var(--button-hover);
+}
+
+
+.jobroles-container {
+    height: 200px;
+    flex-direction: column;
+    overflow: auto;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 10px 0 0 20px;
+    font-size: 12px;
+}
+
+option {
+    border-radius: 50%;
+}
+
+
+
+textarea {
+    height: 140px;
+    resize: none;
+}
+
+
+.extractor-textarea {
+    height: 380px;
+}
+
+.uploadcsv-box {
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 200px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    background-color: var(--dark-gray-color);
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 4px dashed var(--gray-color);
+    font-size: 20px;
+    position: relative;
+}
+
+.uploading-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-gray-color);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dragging {
+    border: 4px dashed white;
+}
+
+.selected-files-box {
+    border-radius: 5px;
+    padding-left: 10px;
+    height: 180px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    background-color: var(--dark-gray-color);
+    color: white;
+    font-size: 15px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.selected-files-names {
+    height: 30px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--gray-color);
+    display: flex;
+    align-items: center;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+
+.copy-button {
+    padding: 0;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.submit-button {
+    font-size: 18px;
+}
+
+.button-disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.button-enabled {
+    background: var(--button-color);
+    color: black;
+}
+
+
+.emailguesser-list-box {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    max-width: 480px;
+    width: 100%;
+    color: black;
+    flex-direction: column;
+    border-radius: 10px;
+    min-width: 280px;
+    height: 500px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px 0px rgb(94, 94, 94);
+    background-color: white;
+}
+
+
+.emailguesser-list {
+    max-width: 480px;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 15px;
+    height: 500px;
+    min-width: 280px;
+    overflow-y: auto;
+}
+
+.validate-buttons {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--form-color);
+    border-radius: 0 0 5px 5px;
+}
+
+.buttons {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--form-color);
+    border-radius: 5px 5px 0 0;
+}
+
+
+#search-button {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+
+#search-button i {
+    margin: 0 5px;
+}
+
+#search-button input {
+    height: 80%;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+
+#search-button div {
+    display: flex;
+    align-items: center;
+}
+
+
+.buttons-right, .buttons-left {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons-right div {
+    margin-left: 10px;
+}
+
+
+.button-fixed {
+    padding: 0 5px;
+    min-width: 40px;
+}
+
+
+.emailguesser-list-selectAll:hover {
+    background: var(--button-hover);
+    color: black;
+}
+
+.email-checkboxes {
+    /* background-color: var(--form-color); */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    /* height: 30px; */
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+
+
+.email-checkboxes {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+.email-checkboxes input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: rgb(167, 167, 167);
+    border-radius: 50%;
+}
+
+
+.email-checkboxes input:checked ~ .checkmark {
+    background: var(--button-hover);
+}
+
+
+
+.email-checkboxes:checked ~ .checkmark {
+    background: var(--button-hover);
+}
+
+/* Style the checkmark/indicator */
+.email-checkboxes .checkmark:after {
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 9px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.email-checkboxes input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.buttons-addurl {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.button-addurl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 10px;
+    background: var(--button-color);
+    border-radius: 50%;
+    margin: -10px 0 10px 10px;
+    position: relative;
+    color: black;
+}
+
+
+
+
+
+
+
+
+.button-addurl i {
+    cursor: pointer;
+}
+
+
+.button-addurl-explain {
+    position: absolute;
+    top: -50px;
+    right: -100px;
+    font-size: 15px;
+    background-color: orange;
+    z-index: 2;
+    width: 100px;
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+    display: none;
+}
+
+.emailguesser-list-results {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.emailguesser-list-selectAll {
+    padding: 0 5px;
+    margin-top: -10px;
+    cursor: pointer;
+    color: black;
+    border: none;
+    display: flex;
+    height: 20px;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 5px;
+    background: var(--button-color);
+    white-space: nowrap;
+}
+
+
+label {
+    position: relative;
+}
+
+.button-question-mark {
+    position: absolute;
+    top: -60px;
+    left: 150px;
+    font-size: 13px;
+    background-color: orange;
+    z-index: 2;
+    width: 150px;
+    border: 1px solid black;
+    padding: 5px;
+    color: black;
+    display: none;
+}
+
+
+.bx-question-mark {
+    background-color: orange;
+    border-radius: 50%;
+    padding: 1.5px;
+    color: black;
+}
+
+
+.bx-question-mark:hover + .button-question-mark {
+    display: block;
+}
+
+.active-email {
+    background-color: limegreen;
+    color: white;
+}
+
+.inactive-email {
+    background-color: rgb(145, 0, 0);
+    color: white;
+}
+
+.error-email {
+    background-color: orange;
+    color: white;
+}
+
+.loading-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.842);
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    padding: 20%;
+    z-index: 1;
+    font-size: 20px;
+}
+
+.loading-bar {
+    height: 15px;
+    width: 100%;
+    background: var(--gray-color);
+    border-radius: 3px;
+}
+
+.loading-progress {
+    height: 100%;
+    background: var(--button-color);
+    border-radius: inherit;
+}
+
+/*      EMAIL GUESSER       *//*      EMAIL GUESSER       *//*      EMAIL GUESSER       */
+
+
+
+/*      NAVBAR       *//*      NAVBAR       *//*      NAVBAR       */
+
+.navbar-container {
+    width: 100vw;
+    height: var(--navbar-height);
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px 0px rgb(94, 94, 94);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.navbar-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    
+}
+
+
+
+.navbar-box {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+
+.navbar-box img {
+    max-height: 70%;
+}
+
+
+.navbar-sign-button {
+    margin-left: 20px;
+}
+
+
+
+/*      NAVBAR       *//*      NAVBAR       *//*      NAVBAR       */
+
+
+/*      TYPESELECTOR       *//*      TYPESELECTOR       *//*      TYPESELECTOR       */
+
+
+.typeselector-container {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.typeselector-wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    /* justify-content: flex-end; */
+    border-bottom: 1px solid gray;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.typeselector-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.typeselector-box {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: gray;
+}
+
+.typeselector-box:hover {
+    background-color: var(--gray-color)
+}
+
+.typeselected {
+    border-bottom: 2px solid white;
+    color: white;
+}
+/*      TYPESELECTOR       *//*      TYPESELECTOR       *//*      TYPESELECTOR       */
+
+/*      HEROBANNER       *//*      HEROBANNER       *//*      HEROBANNER       */
+
+
+
+
+.homepage-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background: var(--background-gradient); */
+    /* background-color: var(--background-color); */
+    
+    
+}
+/* linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 60, 1) 70%, rgb(25, 149, 0) 100%); */
+
+.homepage-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px 0;
+    background-image:
+    linear-gradient(to top right, rgba(0, 0, 0, 0.85),rgba(0, 60, 1, 0.85), rgba(25, 149, 0, 0.85)),
+    url("./components/img/HeroBannerBackground.png");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homepage-hero {
+    height: 100%;
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 30px;
+    
+}
+
+.homepage-hero-titles {
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-hero-title {
+    display: flex;
+    font-size: 75px;
+}
+
+.homepage-hero-subtitle {
+    display: flex;
+    font-size: 35px;
+}
+
+.homepage-hero-button {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 5px 15px;
+    margin-top: 20px;
+    outline: 2px solid rgb(1, 182, 1);
+    border-radius: 20px;
+    width: max-content;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 0;
+    transition: 0.2s;
+}
+
+
+
+
+.homepage-hero-button::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: var(--button-color);
+    /* top: 0; */
+    bottom: 0;
+    left: 50%;
+    z-index: -1;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+@media (hover: hover) {
+    .homepage-hero-button:hover {
+        outline: 0px solid rgb(1, 182, 1);
+        color: black;
+    }
+    .homepage-hero-button:hover.homepage-hero-button::after {
+        width: 100%;
+        height: 100%;
+        left: 0;
+
+    }
+}
+
+
+.herobanner-images {
+    position: absolute;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.herobanner-images.image1{
+    left: 80%;
+    top: 10%;
+    height: 50%;
+    filter: blur(4px);
+}
+
+.herobanner-images.image2{
+    right: 85%;
+    bottom: -10%;
+    height: 40%;
+    filter: blur(2px);
+}
+
+.herobanner-images.image3{
+    right: 60%;
+    bottom: 70%;
+    height: 40%;
+    filter: blur(5px);
+}
+
+
+.homepage-hero-title img {
+    height: 100%;
+    width: 110px;
+}
+
+
+.homepage-hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 80%;
+}
+
+.wave {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh/10);
+    background: url("./components/img/wave.png");
+    background-size: 800px calc(100vh/10);
+    transform: rotate(180deg);
+    opacity: 0;
+}
+
+.wave.wave1 {
+    animation: wave 30s linear infinite;
+    opacity: 0.8;
+    filter: invert(5%) sepia(80%) saturate(5506%) hue-rotate(17deg) brightness(99%) contrast(106%);
+}
+
+.wave.wave2 {
+    animation: wave2 20s linear infinite;
+    opacity: 0.5;
+    filter: invert(42%) sepia(75%) saturate(341%) hue-rotate(101deg) brightness(100%) contrast(104%);
+}
+
+.wave.wave3 {
+    animation: wave3 20s linear infinite;
+    opacity: 0.5;
+    filter: invert(43%) sepia(96%) saturate(1166%) hue-rotate(73deg) brightness(93%) contrast(104%);
+}
+
+@keyframes wave {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 800px;
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -800px;
+    }
+}
+
+@keyframes wave3 {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 800px;
+    }
+}
+/*      HEROBANNER       *//*      HEROBANNER       *//*      HEROBANNER       */
+
+
+/*      HOMEPAGE APPS       *//*      HOMEPAGE APPS       *//*      HOMEPAGE APPS       */
+
+.homepage-apps-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(189,255,0,1);
+    background-image: linear-gradient(90deg, rgba(189,255,0,1) 0%, rgba(33,173,0,1) 35%, rgba(77,255,201,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.homepage-apps-title {
+    font-size: 35px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.homepage-apps-apps {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.homepage-apps-box {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    width: 30%;
+    min-width: 260px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
+    color: black;
+    background: linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 80%, rgb(51, 255, 0) 100%);
+    color: white;
+    text-align: center;
+    margin: 15px;
+    min-height: 300px;
+}
+
+.homepage-apps-name {
+    font-size: 30px;
+    background: var(--button-color);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.homepage-apps-description {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.homepage-apps-image{
+    width: 100%;
+    transform: perspective(1000px) rotateY(-30deg);
+    box-shadow: 0 2px 5px 0px rgb(0, 0, 0);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.homepage-apps-box:hover > .homepage-apps-image {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.homepage-apps-box:hover {
+    transition: 0.3s;
+    background: linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 10%, rgb(51, 255, 0) 100%);
+}
+
+#apps-section {
+    scroll-margin-top: var(--navbar-height);
+}
+
+
+/*      HOMEPAGE APPS       *//*      HOMEPAGE APPS       *//*      HOMEPAGE APPS       */
+
+
+/*      CONVERTER       *//*      CONVERTER       *//*      CONVERTER       */
+
+.csv-converter-box {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.selected-files-title {
+    width: 100%;
+    font-size: 20px;
+    padding: 5px;
+    
+}
+
+.selected-files {
+    height: 100%;
+    padding: 10px;
+    overflow: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.selected-file-name {
+    margin: 10px 0;
+    padding: 0px 5px;
+    color: black;
+    border-bottom: 1px solid gray;
+}
+
+
+.downloadAll {
+    background: var(--button-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+.downloadAll:hover {
+    background: var(--button-hover);
+}
+
+
+.error-message {
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.uploading-loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 8px;
+    font-size: 24px;
+}
+
+
+/*      CONVERTER       *//*      CONVERTER       *//*      CONVERTER       */
+
+
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid black;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+    0% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    4.9% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    5% {
+      top: 36px;
+      left: 36px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 72px;
+      height: 72px;
+      opacity: 0;
+    }
+}
+  
+
+
+
+
+
+
+
+
+/*      MEDIA QUERIES       *//*      MEDIA QUERIES       *//*      MEDIA QUERIES       */
+
+@media (hover: hover) {
+    .button-enabled:hover {
+        background: var(--button-hover);
+    }
+    .email-checkboxes:hover input ~ .checkmark {
+        background: var(--button-hover);
+    }
+    .button-addurl:hover {
+        background: var(--button-hover);
+    }
+    .button-addurl i:hover + .button-addurl-explain {
+        display: block;
+    }
+    
+}
+
+
+@media (hover: none) {
+    .email-checkboxes:hover input ~ .checkmark {
+        background-color: none;
+    }
+}
+
+@media (max-width: 1500px) {
+    .homepage-hero-title {
+        display: flex;
+        font-size: 65px;
+    }
+    
+    .homepage-hero-subtitle {
+        display: flex;
+        font-size: 30px;
+    }
+
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+    .typeselector-wrapper {
+        max-width: 520px;
+    }
+    .homepage-hero {
+        flex-direction: column-reverse;
+        padding: 80px 20px;
+    }
+    .homepage-hero-titles {
+        width: 100%;
+        align-items: center;
+    }
+    .homepage-hero-title {
+        text-align: center;
+        justify-content: center;
+        font-size: 60px;
+        margin-top: 20px;
+    }
+    .homepage-hero-subtitle {
+        text-align: center;
+        justify-content: center;
+        font-size: 30px;
+
+    }
+
+    .homepage-hero-button {
+        font-size: 18px;
+    }
+
+    .homepage-apps-title {
+        font-size: 25px;
+    }
+    
+    
+    .homepage-apps-name {
+        font-size: 28px;
+    }
+
+    
+    .homepage-apps-image{
+        transform: perspective(900px) rotateY(-30deg);
+    }
+
+}
+
+@media (max-width: 800px) {
+    .button-addurl-explain {
+        right: 20px;
+    }
+    .homepage-hero-title {
+        font-size: 50px;
+    }
+    .homepage-hero-subtitle {
+        font-size: 25px;
+
+    }
+    .homepage-apps-name {
+        font-size: 26px;
+    }
+
+    .homepage-apps-description {
+        font-size: 14px;
+    }
+    
+    .homepage-apps-image{
+        transform: perspective(700px) rotateY(-30deg);
+    }
+    .emailguesser-title { 
+        font-size: 40px;
+    }
+    .emailguesser-subtitle {
+        font-size: 14px;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .button-fixed {
+        font-size: 12px;
+    }
+    .email-checkboxes {
+        font-size: 16px;
+    }
+    .checkmark {
+        height: 20px;
+        width: 20px;
+    }
+    .email-checkboxes .checkmark:after {
+        left: 6.5px;
+        top: 3.5px;
+        width: 4px;
+        height: 8px;
+    }
+    .emailguesser-list-results {
+        font-size: 17px;
+    }
+
+    .emailguesser-list-selectAll {
+        font-size: 12px;
+    }
+
+    .homepage-hero-title {
+        font-size: 50px;
+    }
+    .homepage-hero-subtitle {
+        font-size: 20px;
+
+    }
+    .homepage-apps-name {
+        font-size: 24px;
+    }
+    
+    .homepage-apps-image{
+        transform: perspective(700px) rotateY(-30deg);
+    }
+    .emailguesser-title { 
+        font-size: 35px;
+    }
+
+    .typeselector-box {
+        font-size: 15px;
+    }
+    
+    .wave {
+        top: 35px;
+        height: calc(100vh/12);
+        background-size: 400px calc(100vh/12);
+        transform: rotate(180deg);
+        opacity: 0;
+    }
+    @keyframes wave {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 400px;
+        }
+    }
+
+    @keyframes wave2 {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: -400px;
+        }
+    }
+
+    @keyframes wave3 {
+        0% {
+            background-position-x: 0;
+        }
+        100% {
+            background-position-x: 400px;
+        }
+    }
+    
+}
+
+@media (max-width: 500px) { 
+    .homepage-apps-box {
+        flex-direction: column;
+        text-align: center;
+    }
+    .homepage-apps-box:hover {
+        background: linear-gradient(rgb(0, 0, 0) 0%, rgb(0, 0, 0) 40%, rgb(51, 255, 0) 100%);
+    }
+    
+
+    .homepage-apps-name {
+        font-size: 22px;
+        
+    }
+    .homepage-apps-image{
+        transform: perspective(1200px) rotateY(-30deg);
+        width: 100%;
+    }
+
+    .emailguesser-title { 
+        font-size: 30px;
+    }
+}
+
+
+@media (max-width: 400px) { 
+    .homepage-hero-title {
+        font-size: 40px;
+    }
+    .homepage-hero-subtitle {
+        font-size: 18px;
+    
+    }
+    .homepage-hero-button {
+        font-size: 17px;
+
+    }
+}
